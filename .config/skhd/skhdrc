@@ -17,10 +17,8 @@ alt - f : yabai -m window --toggle float;\
 # Center a floating window
 ctrl + alt - c : yabai -m window --grid 4:4:1:1:2:2
 
-# Switch to floating systemwide and disable borders
-shift + alt - f: yabai -m config layout float; yabai -m config window_border off
-
-shift + alt - b: yabai -m config layout bsp; yabai -m config window_border on
+# fullscreen an app
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
@@ -59,9 +57,6 @@ alt - o : yabai -m display --focus prev
 alt - p : yabai -m display --focus next
 
 # increase window size
-# shift + alt - a : yabai -m window --resize left:20:0
-# shift + alt - d : yabai -m window --resize right:20:0
-# shift + alt - w : yabai -m window --resize top:0:-20
 ctrl + alt - h : yabai -m window --resize left:-40:0 ; yabai -m window --resize right:-40:0
 ctrl + alt - j : yabai -m window --resize bottom:0:40 ; yabai -m window --resize top:0:40
 ctrl + alt - k : yabai -m window --resize top:0:-40 ; yabai -m window --resize bottom:0:-40
@@ -71,6 +66,15 @@ ctrl + alt - l : yabai -m window --resize right:40:0 ; yabai -m window --resize 
 # shift + alt - d : yabai -m window --resize bottom:0:-20
 # cmd + alt - w : yabai -m window --resize bottom:0:20
 
+################
+# ALL WINDOWS
+################
+# Switch to floating systemwide and disable borders
+shift + alt - f: yabai -m config layout float; yabai -m config window_border off
+# tiling layout
+shift + alt - b: yabai -m config layout bsp; yabai -m config window_border on
+# stack layout
+# shift + alt - s: yabai -m config layout stack; yabai -m config window_border on
 
 ################################################################################
 ## MISC
