@@ -15,7 +15,7 @@ alt - c : yabai -m window --close
 alt - f : yabai -m window --toggle float;\
 	yabai -m window --grid 4:4:1:1:2:2
 # Center a floating window
-alt - c : yabai -m window --grid 4:4:1:1:2:2
+ctrl + alt - c : yabai -m window --grid 4:4:1:1:2:2
 
 # Switch to floating systemwide and disable borders
 shift + alt - f: yabai -m config layout float; yabai -m config window_border off
