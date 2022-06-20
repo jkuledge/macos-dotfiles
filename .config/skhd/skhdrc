@@ -1,0 +1,8 @@
+# OPEN TERMINAL
+alt - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
+
+# OPEN NEW BROSWER WINDOW
+alt - b : open -na "Microsoft Edge" --args --new-window ""
+
+alt - f : yabai -m window --toggle float;\
+	yabai -m window --grid 4:4:1:1:2:2
