@@ -4,5 +4,49 @@ alt - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 # OPEN NEW BROSWER WINDOW
 alt - b : open -na "Microsoft Edge" --args --new-window ""
 
+################################################################################
+##  window mgmt
+################################################################################
+
+# floating windows
 alt - f : yabai -m window --toggle float;\
 	yabai -m window --grid 4:4:1:1:2:2
+# Center a floating window
+alt - c : yabai -m window --grid 4:4:1:1:2:2
+
+# Switch to floating systemwide and disable borders
+shift + alt - f: yabai -m config layout float; yabai -m config window_border off
+
+shift + alt - b: yabai -m config layout bsp; yabai -m config window_border on
+
+# toggle window split type
+alt - e : yabai -m window --toggle split
+
+# focus windows
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+
+# swap windows
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+
+# balance size of windows
+shift + alt - 0 : yabai -m space --balance
+
+# focus monitor using left and right arrow keys, respectively
+alt - o : yabai -m display --focus prev
+alt - p : yabai -m display --focus next
+
+# increase window size
+shift + alt - a : yabai -m window --resize left:-20:0
+shift + alt - d : yabai -m window --resize right:20:0
+shift + alt - w : yabai -m window --resize top:0:-20
+
+# decrease window size
+shift + alt - d : yabai -m window --resize bottom:0:-20
+# shift + alt - w : yabai -m window --resize top:0:20
+
