@@ -52,7 +52,7 @@ fi
 ################################################################################
 
 # GIT BARE REPOS
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # RESTART SOUND DRIVER (MACOS)
 alias restart_sound="sudo pkill -9 coreaudiod"
@@ -103,9 +103,9 @@ function set_wallpaper() {
 ################################################################################
 
 # COLORSCIPT
-# colorscript -e crunchbang-mini
+colorscript -e crunchbang-mini
 # neofetch --config ~/.config/neofetch/custom_config.conf
-neofetch --kitty $HOME/Pictures/neofetch/g2tYype.png --crop_mode normal
+
 
 # ZSH PLUGINS
 source ~/programs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -118,3 +118,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
