@@ -86,7 +86,7 @@ alias colorscript='/Users/josh.kuledge/programs/shell-color-scripts/colorscript.
 alias ssh="kitty +kitten ssh"
 
 # HIGHLIGHT ACTIVE WINDOW
-alias highlight='/Users/josh.kuledge/.config/limelight/limelightrc'
+# alias highlight='/Users/josh.kuledge/.config/limelight/limelightrc'
 # alias limelight="limelight -c /Users/josh.kuledge/.config/limelight/limelightrc"
 
 ################################################################################
@@ -105,7 +105,7 @@ function set_wallpaper() {
 # COLORSCIPT
 # colorscript -e crunchbang-mini
 # neofetch --config ~/.config/neofetch/custom_config.conf
-neofetch --kitty ~/Pictures/neofetch/g2tYype.png --crop_mode normal
+neofetch --kitty $HOME/Pictures/neofetch/g2tYype.png --crop_mode normal
 
 # ZSH PLUGINS
 source ~/programs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
