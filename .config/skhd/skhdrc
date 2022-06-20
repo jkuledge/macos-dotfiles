@@ -8,6 +8,9 @@ alt - b : open -na "Microsoft Edge" --args --new-window ""
 ##  window mgmt
 ################################################################################
 
+# close focused window
+alt - c : yabai -m window --close
+
 # floating windows
 alt - f : yabai -m window --toggle float;\
 	yabai -m window --grid 4:4:1:1:2:2

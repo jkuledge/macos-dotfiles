@@ -103,8 +103,9 @@ function set_wallpaper() {
 ################################################################################
 
 # COLORSCIPT
-colorscript -e crunchbang-mini
+# colorscript -e crunchbang-mini
 # neofetch --config ~/.config/neofetch/custom_config.conf
+neofetch --kitty ~/Pictures/neofetch/g2tYype.png --crop_mode normal
 
 # ZSH PLUGINS
 source ~/programs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
