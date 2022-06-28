@@ -24,8 +24,8 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 alt - e : yabai -m window --toggle split
 
 # focus windows
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev
+alt - l : yabai -m window --focus east || yabai -m window --focus stack.next
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 
@@ -53,8 +53,8 @@ shift + ctrl - k : yabai -m window --warp north
 shift + alt - 0 : yabai -m space --balance
 
 # focus monitor using left and right arrow keys, respectively
-alt - o : yabai -m display --focus prev
-alt - p : yabai -m display --focus next
+# alt - o : yabai -m display --focus prev
+# alt - p : yabai -m display --focus next
 
 # increase window size
 ctrl + alt - h : yabai -m window --resize left:-40:0 ; yabai -m window --resize right:-40:0
@@ -71,10 +71,10 @@ ctrl + alt - l : yabai -m window --resize right:40:0 ; yabai -m window --resize 
 ################
 # Switch to floating systemwide and disable borders
 shift + alt - f: yabai -m config layout float; yabai -m config window_border on
-# tiling layout
-shift + alt - b: yabai -m config layout bsp; yabai -m config window_border on
-# stack layout
-shift + alt - s: yabai -m config layout stack; yabai -m config window_border on
+# tiling layout, reduce left padding - no hammmerspoon icons
+shift + alt - b: yabai -m config layout bsp; yabai -m config left_padding 10
+# stack layout, add padding on left for hammerspoon stack icons
+shift + alt - s: yabai -m config layout stack; yabai -m config left_padding 40
 
 # # focus the prev window in a stack
 # yabai -m window --focus stack.prev
