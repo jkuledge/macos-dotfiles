@@ -9,82 +9,82 @@ alt - b : open -na "Microsoft Edge" --args --new-window ""
 ################################################################################
 
 # close focused window
-alt - c : yabai -m window --close
+# alt - c : yabai -m window --close
 
 # floating windows
-alt - f : yabai -m window --toggle float;\
-	yabai -m window --grid 4:4:1:1:2:2
-# Center a floating window
-ctrl + alt - c : yabai -m window --grid 4:4:1:1:2:2
+# alt - f : yabai -m window --toggle float;\
+# 	yabai -m window --grid 4:4:1:1:2:2
+# # Center a floating window
+# ctrl + alt - c : yabai -m window --grid 4:4:1:1:2:2
 
-# fullscreen an app
-shift + alt - m : yabai -m window --toggle zoom-fullscreen
+# # fullscreen an app
+# shift + alt - m : yabai -m window --toggle zoom-fullscreen
 
-# toggle window split type
-alt - e : yabai -m window --toggle split
+# # toggle window split type
+# alt - e : yabai -m window --toggle split
 
-# focus windows
-alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev
-alt - l : yabai -m window --focus east || yabai -m window --focus stack.next
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
+# # focus windows
+# alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev
+# alt - l : yabai -m window --focus east || yabai -m window --focus stack.next
+# alt - j : yabai -m window --focus south
+# alt - k : yabai -m window --focus north
 
-# swap windows
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
+# # swap windows
+# shift + alt - h : yabai -m window --swap west
+# shift + alt - l : yabai -m window --swap east
+# shift + alt - j : yabai -m window --swap south
+# shift + alt - k : yabai -m window --swap north
 
-# swap windows clockwise
-# shift + alt - h : $HOME/.config/skhd/swap_counterclockwise.sh
-# shift + alt - l : $HOME/.config/skhd/swap_clockwise.sh
+# # swap windows clockwise
+# # shift + alt - h : $HOME/.config/skhd/swap_counterclockwise.sh
+# # shift + alt - l : $HOME/.config/skhd/swap_clockwise.sh
 
-# warp windows
-shift + ctrl - l : yabai -m window --warp east
-shift + ctrl - h : yabai -m window --warp west
-shift + ctrl - j : yabai -m window --warp south
-shift + ctrl - k : yabai -m window --warp north
+# # warp windows
+# shift + ctrl - l : yabai -m window --warp east
+# shift + ctrl - h : yabai -m window --warp west
+# shift + ctrl - j : yabai -m window --warp south
+# shift + ctrl - k : yabai -m window --warp north
 
-# warp windows clockwise
-# ctrl + alt - h : $HOME/.config/skhd/warp_counterclockwise.sh
-# ctrl + alt - l : $HOME/.config/skhd/warp_clockwise.sh
+# # warp windows clockwise
+# # ctrl + alt - h : $HOME/.config/skhd/warp_counterclockwise.sh
+# # ctrl + alt - l : $HOME/.config/skhd/warp_clockwise.sh
 
-# balance size of windows
-shift + alt - 0 : yabai -m space --balance
+# # balance size of windows
+# shift + alt - 0 : yabai -m space --balance
 
-# focus monitor using left and right arrow keys, respectively
-# alt - o : yabai -m display --focus prev
-# alt - p : yabai -m display --focus next
+# # focus monitor using left and right arrow keys, respectively
+# # alt - o : yabai -m display --focus prev
+# # alt - p : yabai -m display --focus next
 
-# increase window size
-ctrl + alt - h : yabai -m window --resize left:-40:0 ; yabai -m window --resize right:-40:0
-ctrl + alt - j : yabai -m window --resize bottom:0:40 ; yabai -m window --resize top:0:40
-ctrl + alt - k : yabai -m window --resize top:0:-40 ; yabai -m window --resize bottom:0:-40
-ctrl + alt - l : yabai -m window --resize right:40:0 ; yabai -m window --resize left:40:0
+# # increase window size
+# ctrl + alt - h : yabai -m window --resize left:-40:0 ; yabai -m window --resize right:-40:0
+# ctrl + alt - j : yabai -m window --resize bottom:0:40 ; yabai -m window --resize top:0:40
+# ctrl + alt - k : yabai -m window --resize top:0:-40 ; yabai -m window --resize bottom:0:-40
+# ctrl + alt - l : yabai -m window --resize right:40:0 ; yabai -m window --resize left:40:0
 
-# decrease window size
-# shift + alt - d : yabai -m window --resize bottom:0:-20
-# cmd + alt - w : yabai -m window --resize bottom:0:20
+# # decrease window size
+# # shift + alt - d : yabai -m window --resize bottom:0:-20
+# # cmd + alt - w : yabai -m window --resize bottom:0:20
 
-################
-# ALL WINDOWS
-################
-# Switch to floating systemwide and disable borders
-shift + alt - f: yabai -m config layout float; yabai -m config window_border on
-# tiling layout, reduce left padding - no hammmerspoon icons
-shift + alt - b: yabai -m config layout bsp; yabai -m config left_padding 10
-# stack layout, add padding on left for hammerspoon stack icons
-shift + alt - s: yabai -m config layout stack; yabai -m config left_padding 40
+# ################
+# # ALL WINDOWS
+# ################
+# # Switch to floating systemwide and disable borders
+# shift + alt - f: yabai -m config layout float; yabai -m config window_border on
+# # tiling layout, reduce left padding - no hammmerspoon icons
+# shift + alt - b: yabai -m config layout bsp; yabai -m config left_padding 10
+# # stack layout, add padding on left for hammerspoon stack icons
+# shift + alt - s: yabai -m config layout stack; yabai -m config left_padding 40
 
-# # focus the prev window in a stack
-# yabai -m window --focus stack.prev
+# # # focus the prev window in a stack
+# # yabai -m window --focus stack.prev
 
-# # focus the next window in a stack
-# yabai -m window --focus stack.next
+# # # focus the next window in a stack
+# # yabai -m window --focus stack.next
 
-################################################################################
-## MISC
-################################################################################
+# ################################################################################
+# ## MISC
+# ################################################################################
 
-# restart yabai
-alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai" && launchctl kickstart -k "gui/${UID}/homebrew.mxcl.skhd"
+# # restart yabai
+# alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai" && launchctl kickstart -k "gui/${UID}/homebrew.mxcl.skhd"

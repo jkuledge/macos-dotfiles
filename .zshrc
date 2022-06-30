@@ -85,6 +85,9 @@ alias colorscript='/Users/josh.kuledge/programs/shell-color-scripts/colorscript.
 # KITTY SSH COPY TERM INFO TO SERVER WHEN SSH-ING
 alias ssh="kitty +kitten ssh"
 
+# Toggle Dark Mode
+alias set_mode="osascript $HOME/programs/scripts/darkmode.applescript"
+
 # HIGHLIGHT ACTIVE WINDOW
 # alias highlight='/Users/josh.kuledge/.config/limelight/limelightrc'
 # alias limelight="limelight -c /Users/josh.kuledge/.config/limelight/limelightrc"
