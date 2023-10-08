@@ -8,6 +8,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# POETRY TAB COMPLETION
+fpath+=~/.zfunc
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -58,7 +61,9 @@ alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias restart_sound="sudo pkill -9 coreaudiod"
 
 # CAT
-alias cat="bat"
+alias cat="/bin/cat"
+alias sed="/opt/homebrew/bin/gsed"
+alias awk="/opt/homebrew/bin/gawk"
 
 # GCLOUD
 alias ssh_dry_run="gcloud compute ssh de-vm-jkuledge --project=og-developer-vms --zone=us-central1-c --tunnel-through-iap --dry-run"
@@ -76,6 +81,7 @@ alias lt='ls --tree'
 # PYTHON
 alias python='python3'
 alias pip='pip3'
+alias pr='poetry run python'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,10 +111,16 @@ function set_wallpaper() {
 ## MISC
 ################################################################################
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
 # COLORSCIPT
 colorscript -e crunchbang-mini
 # neofetch --config ~/.config/neofetch/custom_config.conf
 
+# Z (cd alternative)
+. /opt/homebrew/etc/profile.d/z.sh
 
 # ZSH PLUGINS
 source ~/programs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -118,7 +130,19 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH=/Users/josh.kuledge/.local/bin:$PATH
+export PATH="$HOME/go/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/josh.kuledge/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
