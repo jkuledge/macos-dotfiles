@@ -146,8 +146,13 @@ function local_signal() {
 function fcode () {
 	local directory=$1
 	local depth=${2:-1} # depth of 1 default if $2 not supplied
+	local fuzzy_dir=$(find $directory -type d -maxdepth $depth | fzf)
+	if [ -z $fuzzy_dir ]; then
+		return 1;
+	fi
+	echo "code $fuzzy_dir"
 
-	code $(find $directory -type d -maxdepth $depth | fzf)
+	code $fuzzy_dir
 }
 
 function fco () {
