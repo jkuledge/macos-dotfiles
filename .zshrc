@@ -49,6 +49,8 @@ if command -v theme.sh > /dev/null; then
 	alias thd='theme.sh --dark -i'
 fi
 
+# while IFS= read -r line; do printf '%s' "$line"; done < "$HOME/.themer/colors"
+
 
 
 ################################################################################
@@ -104,7 +106,7 @@ function bastion_process_squash() {
 				--command "$remote_command"
 			;;
 		"prod"|"Prod"|"PROD"|"production")
-			echo "prod - NOT Implemented yet"
+			echo "prod"
 			gcloud compute ssh cloudsql-tunnel \
 				--zone=us-central1-a \
 				--project=og-platform-prod \
@@ -159,6 +161,8 @@ function fco () {
 	git branch | fzf | xargs -I {} git checkout {}
 }
 
+source $HOME/.config/zsh_functions/funcs.sh
+
 # PYTHON
 alias python='python3'
 alias pip='pip3'
@@ -204,6 +208,7 @@ function set_wallpaper() {
 # COLORSCIPT
 colorscript -e crunchbang-mini
 # neofetch --config ~/.config/neofetch/custom_config.conf
+# source ~/zsh/prompt.sh
 
 # # Z (cd alternative)
 . /opt/homebrew/etc/profile.d/z.sh
@@ -246,13 +251,13 @@ export JAVA_VERSION=17
 export PATH="/opt/homebrew/opt/openjdk@$JAVA_VERSION/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVA_VERSION/libexec/openjdk.jdk/Contents/Home"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/josh.kuledge/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
 export DOCKER_HOST=unix://$HOME/.rd/docker.sock
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_HOST_OVERRIDE=$(rdctl shell ip a show vznat | awk '/inet / {sub("/.*",""); print $2}')
 
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/josh.kuledge/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
