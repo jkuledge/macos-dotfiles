@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+fzf_history_widget() {
+  local selected=$(HISTTIMEFORMAT= history 0 | sort -r | fzf --height 100% --layout=reverse --border \
+    --preview 'echo {} | awk '\''{$1=""; print $0}'\'' | sed "s/\\\\n/\\n/g" | fold -s | bat --paging=never' \
+    --preview-window=right | awk '{$1=""; print $0}')
+  if [[ -n $selected ]]; then
+	echo  "HERE"
+    BUFFER=$selected
+    CURSOR=${#BUFFER}
+  fi
+}
