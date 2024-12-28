@@ -23,6 +23,9 @@ ZSH_THEME="robbyrussell"
 zstyle ':omz:plugins:nvm' lazy yes
 plugins=(git nvm)
 
+# set history time format
+export HISTTIMEFORMAT="%F %I:%M:%S %p "
+
 ################################################################################
 ## THEME.SH
 ################################################################################
@@ -163,6 +166,14 @@ function fco () {
 
 source $HOME/.config/zsh_functions/funcs.sh
 
+# Load the fzf history browser
+source $HOME/.config/zsh_functions/widgets
+autoload -Uz fzf_history_widget
+zle -N fzf_history_widget
+bindkey '^f' fzf_history_widget
+alias fh='zle fzf_history_widget'
+
+
 # PYTHON
 alias python='python3'
 alias pip='pip3'
@@ -206,7 +217,7 @@ function set_wallpaper() {
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 # COLORSCIPT
-colorscript -e crunchbang-mini
+# colorscript -e crunchbang-mini
 # neofetch --config ~/.config/neofetch/custom_config.conf
 # source ~/zsh/prompt.sh
 
@@ -246,7 +257,6 @@ if ! ssh-add -l | grep -q "josh.kuledge@gmail.com"; then
 fi
 
 
-
 export JAVA_VERSION=17
 export PATH="/opt/homebrew/opt/openjdk@$JAVA_VERSION/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVA_VERSION/libexec/openjdk.jdk/Contents/Home"
@@ -261,3 +271,11 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/josh.kuledge/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# pnpm
+export PNPM_HOME="/Users/josh.kuledge/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
